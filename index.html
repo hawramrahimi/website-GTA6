@@ -1,0 +1,720 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTA VI | فروشگاه بازی</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Vazirmatn', sans-serif;
+    background: #09090d;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    background: rgba(10,10,15,.95);
+    border-bottom: 1px solid #29232d;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 900;
+    color: #ff3d5a;
+    direction: ltr;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #ccc;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #ff3d5a;
+}
+
+.header-btn {
+    background: #ff3154;
+    padding: 11px 23px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.hero {
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    padding: 70px 10%;
+    position: relative;
+    overflow: hidden;
+    background:
+    linear-gradient(90deg, rgba(9,9,13,.15), #09090d 100%),
+    linear-gradient(0deg, #09090d 0%, transparent 55%),
+    url('https://images.unsplash.com/photo-1519608487953-e999c86e7455?q=85&w=2000')
+    center/cover;
+}
+
+.hero-content {
+    max-width: 600px;
+    position: relative;
+    z-index: 2;
+}
+
+.tag {
+    color: #ff526c;
+    background: #ff31541c;
+    border: 1px solid #ff315450;
+    padding: 8px 16px;
+    border-radius: 30px;
+    display: inline-block;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(65px, 10vw, 120px);
+    font-weight: 900;
+    line-height: 1;
+    direction: ltr;
+    text-align: right;
+    color: #ff3e64;
+    text-shadow: 0 0 35px #ff315455;
+}
+
+.hero h2 {
+    font-size: 27px;
+    margin: 20px 0;
+}
+
+.hero p {
+    color: #bcbcc5;
+    line-height: 2.2;
+    font-size: 14px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: .3s;
+}
+
+.btn-primary {
+    background: #ff3154;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #e91b40;
+    transform: translateY(-4px);
+}
+
+.btn-outline {
+    border: 1px solid #ffffff50;
+    color: white;
+    background: transparent;
+}
+
+.btn-outline:hover {
+    background: white;
+    color: black;
+}
+
+section {
+    padding: 90px 9%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.section-title p {
+    color: #999;
+    font-size: 14px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.feature {
+    padding: 30px;
+    background: #15151c;
+    border: 1px solid #282832;
+    border-radius: 14px;
+    transition: .3s;
+}
+
+.feature:hover {
+    transform: translateY(-7px);
+    border-color: #ff3154;
+}
+
+.feature .icon {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    margin-bottom: 12px;
+}
+
+.feature p {
+    color: #999;
+    line-height: 2;
+    font-size: 13px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: .4s;
+}
+
+.gallery img:hover {
+    transform: scale(1.03);
+}
+
+.purchase {
+    background: linear-gradient(135deg, #1d101b, #101018);
+}
+
+.shop-box {
+    max-width: 750px;
+    margin: auto;
+    padding: 40px;
+    background: #171720;
+    border: 1px solid #3b2734;
+    border-radius: 18px;
+    text-align: center;
+}
+
+.shop-box h2 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.shop-box p {
+    color: #aaa;
+    margin-bottom: 25px;
+}
+
+.select-group {
+    text-align: right;
+    margin: 20px 0;
+}
+
+.select-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #ddd;
+    font-size: 14px;
+}
+
+select {
+    width: 100%;
+    padding: 14px;
+    background: #252530;
+    color: white;
+    border: 1px solid #444;
+    border-radius: 8px;
+    font-family: inherit;
+    outline: none;
+}
+
+.price {
+    font-size: 35px;
+    font-weight: 900;
+    color: #ff4163;
+    margin: 25px 0;
+}
+
+.shop-box .btn {
+    width: 100%;
+}
+
+.notice {
+    color: #999;
+    font-size: 11px;
+    margin-top: 15px;
+}
+
+.faq-item {
+    background: #17171f;
+    padding: 20px;
+    margin-bottom: 12px;
+    border-radius: 9px;
+}
+
+.faq-item h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    color: #999;
+    font-size: 13px;
+    line-height: 2;
+}
+
+footer {
+    padding: 40px 8%;
+    text-align: center;
+    background: #050508;
+    border-top: 1px solid #29232d;
+}
+
+footer h2 {
+    color: #ff3154;
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #888;
+    font-size: 12px;
+    line-height: 2;
+}
+
+@media(max-width: 800px) {
+    header {
+        padding: 0 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        min-height: 550px;
+        padding: 60px 7%;
+    }
+
+    .features,
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .shop-box {
+        padding: 25px 18px;
+    }
+
+    section {
+        padding: 65px 6%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">GTA VI</div>
+
+    <nav>
+        <a href="#home">خانه</a>
+        <a href="#features">ویژگی‌ها</a>
+        <a href="#gallery">گالری</a>
+        <a href="#shop">خرید بازی</a>
+    </nav>
+
+    <a href="#shop" class="header-btn">خرید بازی</a>
+</header>
+
+<!-- HERO -->
+
+<div class="hero" id="home">
+    <div class="hero-content">
+        <span class="tag">نسل جدید دنیای GTA</span>
+
+        <h1>GTA VI</h1>
+
+        <h2>به وایس سیتی خوش آمدید!</h2>
+
+        <p>
+            وارد دنیایی متفاوت شوید؛
+            شهری پر از هیجان، ماجراجویی، آزادی و اتفاقات
+            غیرقابل پیش‌بینی. داستان Jason و Lucia را تجربه کنید.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#shop" class="btn btn-primary">خرید بازی</a>
+            <a href="#features" class="btn btn-outline">اطلاعات بیشتر</a>
+        </div>
+    </div>
+</div>
+
+<!-- FEATURES -->
+
+<section id="features">
+    <div class="section-title">
+        <h2>ویژگی‌های GTA VI</h2>
+        <p>تجربه‌ای متفاوت از دنیای Grand Theft Auto</p>
+    </div>
+
+    <div class="features">
+
+        <div class="feature">
+            <div class="icon">🌆</div>
+            <h3>دنیای گسترده</h3>
+            <p>
+                در دنیای وسیع و پرجزئیات Leonida
+                و شهر معروف Vice City ماجراجویی کنید.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">🚗</div>
+            <h3>ماشین‌های متنوع</h3>
+            <p>
+                دنیایی از وسایل نقلیه و تجربه رانندگی
+                در خیابان‌های شهر.
+            </p>
+        </div>
+
+        <div class="feature">
+            <div class="icon">🎮</div>
+            <h3>داستان هیجان‌انگیز</h3>
+            <p>
+                همراه Jason و Lucia وارد ماجراهای
+                جذاب و اتفاقات غیرمنتظره شوید.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+    <div class="section-title">
+        <h2>گالری تصاویر</h2>
+        <p>نگاهی به دنیای GTA VI</p>
+    </div>
+
+    <div class="gallery">
+        <img src="gta-6-screenshots-26-681af735bf4f611672dc4681.webp" alt="شهر">
+        <img src="vice_city_270d2ew_r93hmh_result.webp" alt="نمای شب">
+        <img src="images (6).jpg" alt="منظره">
+    </div>
+</section>
+
+<!-- SHOP -->
+
+<section class="purchase" id="shop">
+    <div class="section-title">
+        <h2>خرید GTA VI</h2>
+        <p>نسخه موردنظر خود را انتخاب کنید</p>
+    </div>
+
+    <div class="shop-box">
+        <h2>Grand Theft Auto VI</h2>
+        <p>نسخه موردنظر خود را انتخاب کنید.</p>
+
+        <div class="select-group">
+            <label>انتخاب نسخه بازی</label>
+            <select id="edition" onchange="updatePrice()">
+                <option value="standard">Standard Edition</option>
+                <option value="ultimate">Ultimate Edition</option>
+            </select>
+        </div>
+
+
+        <div class="select-group">
+            <label for="productType">نوع محصول</label>
+            <select id="productType" onchange="updatePrice()">
+                <option value="physical">نسخه فیزیکی (دیسک)</option>
+                <option value="digital">نسخه دیجیتال (کد قانونی)</option>
+            </select>
+        </div>
+
+        <div class="select-group">
+            <label>انتخاب پلتفرم</label>
+            <select id="platform">
+                <option value="PS5">PlayStation 5</option>
+                <option value="Xbox">Xbox Series X|S</option>
+            </select>
+        </div>
+
+
+        <div class="select-group">
+            <label for="customerName">نام و نام خانوادگی</label>
+            <input
+                id="customerName"
+                type="text"
+                placeholder="نام خود را وارد کنید"
+                maxlength="100"
+            >
+        </div>
+
+        <div class="select-group">
+            <label for="customerEmail">ایمیل</label>
+            <input
+                id="customerEmail"
+                type="email"
+                placeholder="example@email.com"
+                maxlength="160"
+            >
+        </div>
+
+        <div class="select-group">
+            <label for="customerPhone">شماره تماس (اختیاری)</label>
+            <input
+                id="customerPhone"
+                type="tel"
+                placeholder="شماره تماس"
+                maxlength="30"
+            >
+        </div>
+
+        <div id="orderMessage"></div>
+
+        <div class="price" id="price">
+            قیمت را وارد کنید
+        </div>
+
+        <button class="btn btn-primary" onclick="buyGame()">
+            ثبت سفارش
+        </button>
+
+        <div class="notice">
+            قیمت‌ها نمونه هستند و باید با قیمت واقعی فروشگاه جایگزین شوند.
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+
+<section>
+    <div class="section-title">
+        <h2>سوالات متداول</h2>
+        <p>پاسخ سوالات شما</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>GTA VI برای چه پلتفرم‌هایی عرضه می‌شود؟</h3>
+        <p>طبق اطلاعات رسمی، برای PS5 و Xbox Series X|S عرضه شده است.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>تاریخ انتشار بازی چه زمانی است؟</h3>
+        <p>تاریخ انتشار رسمی ۱۹ نوامبر ۲۰۲۶ است.</p>
+    </div>
+
+    <div class="faq-item">
+        <h3>چگونه می‌توانم بازی را سفارش دهم؟</h3>
+        <p>نسخه و پلتفرم موردنظر را انتخاب کرده و دکمه ثبت سفارش را بزنید.</p>
+    </div>
+</section>
+
+<footer>
+    <h2>GTA VI STORE</h2>
+    <p>فروشگاه تخصصی بازی‌های ویدیویی</p>
+    <p>© 2026 All Rights Reserved</p>
+    <p>این فروشگاه مستقل است و وابستگی رسمی به Rockstar Games ندارد.</p>
+</footer>
+
+
+
+<script>
+const API_BASE = "http://localhost:3000/api";
+
+let products = [];
+
+function getSelectedProduct() {
+    const edition = document.getElementById("edition").value;
+    const platform = document.getElementById("platform").value;
+
+    const editionName = edition === "standard"
+        ? "Standard Edition"
+        : "Ultimate Edition";
+
+    const platformName = platform === "PS5"
+        ? "PlayStation 5"
+        : "Xbox Series X|S";
+
+    return products.find(item =>
+        item.edition === editionName &&
+        item.platform === platformName
+    );
+}
+
+function showOrderMessage(message, type = "") {
+    const element = document.getElementById("orderMessage");
+
+    if (!element) {
+        alert(message);
+        return;
+    }
+
+    element.textContent = message;
+    element.className = "order-message " + type;
+}
+
+async function loadProducts() {
+    const price = document.getElementById("price");
+
+    try {
+        const response = await fetch(`${API_BASE}/products`);
+
+        if (!response.ok) {
+            throw new Error("خطا در دریافت محصولات");
+        }
+
+        products = await response.json();
+        updatePrice();
+
+    } catch (error) {
+        console.error("Product loading error:", error);
+        price.innerText = "اتصال به سرور برقرار نشد";
+    }
+}
+
+function updatePrice() {
+    const product = getSelectedProduct();
+    const price = document.getElementById("price");
+
+    if (!product || !product.active) {
+        price.innerText = "این محصول در حال حاضر موجود نیست";
+        return;
+    }
+
+    price.innerText = "قیمت: " +
+        new Intl.NumberFormat("fa-IR").format(product.price) +
+        " تومان";
+}
+
+async function buyGame() {
+    const product = getSelectedProduct();
+
+    const customerName = document.getElementById("customerName").value.trim();
+    const emailInput = document.getElementById("customerEmail");
+    const email = emailInput.value.trim();
+    const phone = document.getElementById("customerPhone").value.trim();
+
+    if (!product || !product.active) {
+        showOrderMessage("این محصول قابل سفارش نیست.", "error");
+        return;
+    }
+
+    if (customerName.length < 2) {
+        showOrderMessage("لطفاً نام خود را وارد کنید.", "error");
+        return;
+    }
+
+    if (!emailInput.checkValidity()) {
+        showOrderMessage("لطفاً ایمیل معتبر وارد کنید.", "error");
+        return;
+    }
+
+    const button = document.querySelector('button[onclick="buyGame()"]');
+
+    button.disabled = true;
+    button.textContent = "در حال ثبت سفارش...";
+
+    try {
+        const response = await fetch(`${API_BASE}/orders`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                customerName,
+                email,
+                phone,
+                productId: product.id,
+                quantity: 1
+            })
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+            throw new Error(result.error || "ثبت سفارش ناموفق بود.");
+        }
+
+        showOrderMessage(
+            "سفارش شماره " + result.order.id +
+            " با موفقیت ثبت شد. پرداخت هنوز انجام نشده است.",
+            "success"
+        );
+
+    } catch (error) {
+        console.error("Order error:", error);
+        showOrderMessage(error.message, "error");
+
+    } finally {
+        button.disabled = false;
+        button.textContent = "ثبت سفارش";
+    }
+}
+
+document.getElementById("edition").addEventListener("change", updatePrice);
+document.getElementById("platform").addEventListener("change", updatePrice);
+
+loadProducts();
+</script>
+
+
+
+</body>
+</html>
